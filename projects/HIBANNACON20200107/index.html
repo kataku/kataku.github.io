@@ -1,0 +1,850 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Cosplay electronics 101</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Cosplay electronics</h1>
+					<h3>Making reliable lighting</h3>
+					<p>
+						<small>Content stolen and presented by Kataku Cosplay</small>
+					</p>
+				</section>
+
+				<section>
+					<h2>Why is this talk so long?</h2>
+					<p>Just tape an led to a 3v button cell!</p>
+					<img height="400" src="resources/lol.jpg"></img>
+					<p><small>http://www.thinkcreate.org/index.php/origami-balloon-mood-light/</small></p>
+					<p class="fragment">Doesn't scale well</p>
+				</section>
+
+				<section>
+					<h2>Just buy it on ebay</h2>
+					<p>you can say you made it later</p>
+					<img height="400" src="resources/justbuyitlol.png"></img>
+					<p class="fragment">Can't find anything good?</p>
+				</section>
+
+				<section>
+					<h2>Still here?</h2>
+				</section>
+
+				<section>
+					<h2>What we're gonna cover</h2>
+					<p class="fragment">What you need (some cost)</p>
+					<p class="fragment">The basics</p>
+					<p class="fragment">Designing a circuit (some math)</p>
+					<p class="fragment">Actually making it all work (some swearing)</p>					
+				</section>
+			
+				<section>
+					
+					<section>
+						<h2>Lets buy some kit!</h2>	
+						<p class="fragment">There's some stuff we're going to <strong>need</strong></p>
+						<p class="fragment">There's some stuff it's going to be <em>nice to have</em>.</p>						
+					</section>
+					<section>
+						<h2>You Need</h2>
+						<p class="fragment">A cutting tool</p>
+						<p class="fragment">A Soldering Iron</p>
+						<p class="fragment">Solder</p>
+						<p class="fragment">Something your soldering iron can't burn*</p>
+					</section>
+					<section>					
+						<img height="600" src="resources/required.jpg"></img>						
+					</section>			
+					<section>
+						<p>*I literally use a kitchen tile off cut</p>
+						<img height="300" src="resources/my_tile.jpg"></img>
+					</section>
+					
+					<section>
+						<h2>I'd also recommend</h2>
+						<p class="fragment">Soldering iron stand</p>
+						<p class="fragment">Heat shrink</p>
+						<p class="fragment">A multimeter</p>						
+					</section>
+					<section>					
+						<img height="600" src="resources/nicetohave.jpg"></img>						
+					</section>	
+					<section>
+						<p>Folks will gladly sell you a kit for very little, E.G</p>
+						<img height="500" src="resources/kit.jpg"></img>
+						<p><small>src: https://www.amazon.co.uk/</small><p>
+					</section>	
+					
+				</section>
+
+				<section>
+				
+					<section>
+						<h2>Using a soldering iron</h2>
+						<p>Just the tip</p>
+					</section>
+								
+					<section>
+						<p>Get the iron hot so the pad steams... and clean it on the pad</p>
+						<img height="500" src="resources/iron/a.webp"></img>
+						<p><small>src: https://www.instructables.com/id/Soldering-101%253a-Lesson-1%253a-Tin-the-Tip/</small><p>
+					</section>
+								
+					<section>
+						<p>It should be shiny, if it's pitted it needs replacing</p>
+						<img height="500" src="resources/iron/b.webp"></img>
+						<p><small>src: https://www.instructables.com/id/Soldering-101%253a-Lesson-1%253a-Tin-the-Tip/</small><p>
+					</section>
+					
+					<section>
+						<p>try to get a thin layer on the iron tip</p>
+						<img height="500" src="resources/iron/c.webp"></img>
+						<p><small>src: https://www.instructables.com/id/Soldering-101%253a-Lesson-1%253a-Tin-the-Tip/</small><p>
+					</section>
+					
+					<section>
+						<p>If your iron is hot enough the solder will flow around the tip</p>
+						<img height="500" src="resources/iron/d.webp"></img>
+						<p><small>src: https://www.instructables.com/id/Soldering-101%253a-Lesson-1%253a-Tin-the-Tip/</small><p>
+					</section>
+					
+					<section>
+						<img height="200" src="resources/iron/tintheiron.gif"></img>
+						<p><small>src: https://learn.adafruit.com/assets/19373</small><p>
+						<p>That's tinning the tip.</p>
+						<p>Solder helps conduct heat evenly and quickly</p>
+						<p>If you do this when you start soldering things will be easier for you.</p>
+						<p>You also won't have to hold the iron to stuff for as long so it won't burn stuff</p>
+					</section>
+					
+					<section>
+						<p>You heat up the wire THEN melt the solder onto the wire</p>
+						<p>If you touch the solder to the iron, it will stick to the iron</p>
+						<p>It should flow over the wire and go all smooth and shiny</p>
+						<img height="300" src="resources/iron/rightway.gif"></img>
+						<p><small>src: https://learn.adafruit.com/assets/19373</small><p>
+					</section>					
+					
+					<section>						
+						<p>Don’t melt solder on the iron and then wipe it on the parts<p>
+						<p>Regularly clean and re-tin the tip of your iron</p>
+						<p>Blowing on a join makes it brittle, let it cool naturally</p>
+						<img height="300" src="resources/soldering/i.jpg"></img>
+						<p><small>src: https://www.instructables.com/id/Soldering-101%253a-Lesson-1%253a-Tin-the-Tip/</small><p>
+						
+						
+					</section>	
+					
+					
+				</section>
+				
+				<section>
+				
+					<section>
+						<h2>Flux</h2>
+						<img width="450" src="resources/soldering/flux.jpg"></img>
+						<img width="450" src="resources/soldering/Flux_Pen.jpg"></img>
+						<p>Going to steal from here now</p>
+						<p><a href="https://en.wikipedia.org/wiki/Flux_(metallurgy)">https://en.wikipedia.org/wiki/Flux_(metallurgy)</a></p>
+					</section>					
+					
+					<section>
+						<h2>Flux</h2>
+						<p>As cleaning agents, fluxes facilitate soldering, brazing, and welding by removing oxidation from the metals to be joined... By preventing the formation of metal oxides, flux enables the solder to adhere to the clean metal surface, rather than forming beads, as it would on an oxidized surface.</p>
+					</section>
+					
+					<section>
+						<h2>Flux</h2>
+						<p>TL;DR Gloop to help solder stick</p>
+						<p>Smear on things to solder</p>
+						<p>Expect fizzing and fumes when soldering with flux</p>
+						<p>Use when solder forms beads and won't flow onto a thing</p>
+						<p>You can also gently rough a surface with sandpaper then use flux if it just won't take</p>
+					</section>
+					
+				</section>
+				
+				<section>
+				
+					<section>
+						<h2>Braid</h2>
+						<img height="300" src="resources/soldering/wick.jpg"></img>
+						<p>Going to steal from here now</p>
+						<p><a href="https://en.wikipedia.org/wiki/Desoldering">https://en.wikipedia.org/wiki/Desoldering</a></p>
+					</section>
+					
+					<section>
+						<h2>Braid</h2>
+						<p>Desoldering braid, also known as desoldering wick or solder wick, is finely braided 18 to 42 AWG copper wire coated with rosin flux, usually supplied on a roll.</p>
+						<p>The end of a length of braid is placed over the soldered connections of a component being removed. The connections are heated with a soldering iron until the solder melts and is wicked into the braid by capillary action. The braid is removed while the solder is still molten, its used section cut off and discarded when cool. Short lengths of cut braid will prevent heat being carried away by the braid instead of heating the joint.</p>
+					</section>
+					
+					<section>
+						<h2>Braid</h2>
+						<p>TL;DR copper rope to stick solder to</p>
+						<p>Get some flux on it and press it to the solder with a very hot iron on the other side</p>
+						<p>When the solder wicks onto the braid remove it with the iron still keeping the braid hot</p>
+						<img height="100" src="resources/soldering/wicka.jpg"></img>
+						<img height="100" src="resources/soldering/wickb.jpg"></img>						
+					</section>
+					
+				</section>
+				
+				<section>
+									
+					<section>
+						<h2>Making a decent electrical connection</h2>
+						<p class="fragment">Stripping Wires</p>
+						<p class="fragment">Splicing wires</p>						
+						<p class="fragment">Insulation and strain relief</p>
+					</section>
+				
+				</section>
+										
+				<section>
+				
+					<section>
+						<h2>Stripping Wires</h2>
+					</section>
+					
+					<section>
+						<p>Press gently feeling the resistance difference to stop at the core</p>
+						<img height="400" src="resources/soldering/a.webp"></img>
+						<p><small>src: https://www.instructables.com/id/Strip-and-Tin-Wires-Like-a-Pro/</small><p>
+					</section>
+								
+					<section>
+						<p>Push the cutters up with your thumb</p>
+						<img height="500" src="resources/soldering/c.webp"></img>
+						<p><small>src: https://www.instructables.com/id/Strip-and-Tin-Wires-Like-a-Pro/</small><p>
+					</section>
+					
+					<section>
+						<p>Leave the insulation on for now</p>
+						<img height="500" src="resources/soldering/e.webp"></img>
+						<p><small>src: https://www.instructables.com/id/Strip-and-Tin-Wires-Like-a-Pro/</small><p>
+					</section>
+				
+					<section>
+						<p>Use it like a handle on the braids</p>
+						<img height="500" src="resources/soldering/d.webp"></img>
+						<p><small>src: https://www.instructables.com/id/Strip-and-Tin-Wires-Like-a-Pro/</small><p>
+					</section>
+					
+					<section>
+						<p>Pro-tip: Twist braids</p>
+						<img height="500" src="resources/soldering/b.webp"></img>
+						<p><small>src: https://www.instructables.com/id/Strip-and-Tin-Wires-Like-a-Pro/</small><p>
+					</section>
+					
+					
+					
+									
+					
+				</section>
+					
+					
+				<section>
+				
+					<section>
+						<h2>Splicing Wires</h2>
+					</section>
+					
+					<section>
+						<p>Have two stripped wires, yeah, good start</p>
+						<img height="500" src="resources/join/a.webp"></img>
+						<p><small>src: https://www.instructables.com/id/Soldering-Tutorial-Inline-Splicing/</small><p>
+					</section>
+					
+					<section>
+						<p>If your going to use heatshrink now's the time</p>
+						<img height="300" src="resources/join/a2.jpg"></img>
+						<p><small>src: https://www.rcgroups.com/forums/showthread.php?1913624-How-to-securely-splice-a-wire</small><p>												
+					</section>
+					
+					<section>
+						<p>Interweave them</p>
+						<img height="500" src="resources/join/b.webp"></img>
+						<p><small>src: https://www.instructables.com/id/Soldering-Tutorial-Inline-Splicing/</small><p>
+					</section>
+					
+					<section>
+						<p>Twist</p>
+						<img height="500" src="resources/join/c.webp"></img>
+						<p><small>src: https://www.instructables.com/id/Soldering-Tutorial-Inline-Splicing/</small><p>
+					</section>
+					
+					<section>
+						<p>Then... no, NO!</p>
+						<img height="500" src="resources/join/d.webp"></img>
+						<p><small>src: https://www.instructables.com/id/Soldering-Tutorial-Inline-Splicing/</small><p>
+					</section>
+					
+					<section>
+						<p>Ah... better</p>
+						<img height="300" src="resources/soldering/i.jpg"></img>
+						<p><small>src: https://www.instructables.com/id/Soldering-Tutorial-Inline-Splicing/</small><p>
+					</section>
+					
+					<section>
+						<p>Now you have a bare exposed connection!</p>
+						<img height="500" src="resources/join/f.webp"></img>
+						<p><small>src: https://www.instructables.com/id/Soldering-Tutorial-Inline-Splicing/</small><p>
+					</section>
+					
+					<section>
+						<p>This also works</p>
+						<img height="500" src="resources/join/g.jpg"></img>						
+						<p><small>src: https://www.youtube.com/watch?v=Zu3TYBs65FM</small><p>
+					</section>
+				
+					<section>
+						<p>But avoid doing this..</p>
+						<p>A pigtail splice is weaker if pulled on</p>
+						<img height="300" src="resources/join/h.jpg"></img>						
+						<p><small>src: https://learn.adafruit.com/assets/19480</small><p>
+					</section>
+				
+				</section>
+								
+				<section>
+				
+					<section>
+						<h2>Insulation and strain relief</h2>
+					</section>
+					
+				</section>					
+				<section>	
+				
+					<section>
+						<h2>Heat shrink</h2>
+					</section>
+					
+					<section>								
+						<p>Electrical tape works best taut and sticking to its self</p>
+						<p>Use heatshrink where you can</p>
+						<p>You can get a kit with all different sizes</p>
+						<img height="300" src="resources/heatshrink/1.jpg"></img>
+						<p><small>src: https://www.amazon.co.uk/</small><p>
+					</section>	
+						
+					<section>
+						<p>So ifixit use a caliper...</p>
+						<img height="300" src="resources/heatshrink/a.jpg"></img>
+						<p><small>src: https://www.ifixit.com/Guide/How+to+Use+Heat+Shrink+Tubing/64041</small><p>						
+					</section>
+					
+					<section>
+						<p>you can just grab the heatshrink that fits over your wire</p>						
+						<p>It will say the amount it shrinks but normally 2:1</p>
+						<img height="300" src="resources/heatshrink/a2.jpg"></img>
+						<p><small>src: https://learn.sparkfun.com/tutorials/working-with-wire/how-to-splice-wires</small><p>
+					</section>
+						
+					<section>
+						<p>Don't forget to slide it over joins before you start</p>
+						<p>Move it as far from the soldering work as possible</p>
+						<img height="300" src="resources/join/a2.jpg"></img>
+						<p><small>src: https://www.rcgroups.com/forums/showthread.php?1913624-How-to-securely-splice-a-wire</small><p>		
+					</section>
+					
+					<section>
+						<p>Heatshrink is cheap but doesn't bend easily once on</p>
+						<p>So you want to overlap the insulation but not go nuts</p>
+						<img height="300" src="resources/heatshrink/b.jpg"></img>
+						<p><small>src: https://www.ifixit.com/Guide/How+to+Use+Heat+Shrink+Tubing/64041</small><p>
+					</section>
+					
+					<section>
+						<p>You can cut heatshrink with regular scissors</p>
+						<img height="300" src="resources/heatshrink/c.jpg"></img>
+						<p><small>src: https://www.ifixit.com/Guide/How+to+Use+Heat+Shrink+Tubing/64041</small><p>
+					</section>	
+					
+					<section>
+						<p>They use a heat gun, you can use a hairdryer</p>
+						<img height="300" src="resources/heatshrink/d.jpg"></img>
+						<p><small>src: https://www.ifixit.com/Guide/How+to+Use+Heat+Shrink+Tubing/64041</small><p>
+					</section>	
+															
+					<section>
+						<p>I use a soldering iron, like a monster</p>
+						<img height="300" src="resources/heatshrink/f.jpg"></img>
+						<p><small>src: https://learn.sparkfun.com/tutorials/working-with-wire/how-to-splice-wires</small><p>
+					</section>
+					
+					<section>
+						<p>Utter reprobates use lighters, they are the worst of all</p>
+						<img height="300" src="resources/heatshrink/g.jpg"></img>
+						<p><small>src: http://www.fuelinjectedford.com/page7.html</small><p>
+					</section>
+					
+					<section>
+						<p>Move the heat around the whole join to shrink it all and don't burn it</p>
+						<img height="300" src="resources/heatshrink/e.jpg"></img>
+						<p><small>src: https://www.ifixit.com/Guide/How+to+Use+Heat+Shrink+Tubing/64041</small><p>
+					</section>
+					
+				</section>				
+
+
+				<section>	
+				
+					<section>
+						<h2>Varnish</h2>
+						<p>These wires are coated in varnish so they don't short</p>						
+						<img height="300" src="resources/glue/copper.webp"></img>
+						<p>Resin, plastidip or clear nail varnish will keep water out</p>
+						<p>Especially relevant if its close to sweating skin</p>
+					</section>
+										
+				</section>
+				
+				<section>	
+					
+					<section>					
+						<h2>hot melt glue</h2>												
+						<p>You can use it to relieve strain</p>
+						<p>You can pot components within it</p>
+						
+					</section>
+					
+					<section>
+						<h2>hot melt glue</h2>
+						<p>Potting something in glue</p>						
+						<p>Wait for gun to fully warm so glue flows nicely around stuff</p>
+						<p>Do it all in one go without letting it cool so its continuous</p>
+						<p>Test the circuit doesn't overheat / melt the glue when potted</p>
+						<img height="300" src="resources/glue/in_glue.jpg"></img>						
+						
+					</section>
+					
+					<section>
+						<h2>hot melt glue</h2>
+						<p>Strain Relief</p>
+						<p>You want the glue to have to break before your solder join</p>
+						<img height="300" src="resources/glue/sr1.jpg"></img>
+						<img height="300" src="resources/glue/sr2.jpg"></img>
+					</section>
+					
+				</section>
+
+				<section>
+									
+					<section>
+						<h2>Designing a circuit</h2>						
+						<p class="fragment">OHM's LAW</p>						
+					</section>
+				
+				</section>
+				
+				<section>
+									
+					<section>
+						<h2>OHM's LAW</h2>						
+						<p class="fragment">V = I × R</p>
+						<p class="fragment">V is the voltage, I is the current, and R is the resistance</p>
+						<p class="fragment">This is how you work out what resistor you need</p>	
+						<p class="fragment">When you want to use a larger battery than a button cell</p>
+						<p class="fragment">And have your leds keep working</p>	
+					</section>
+				
+					<section>
+						<p>Going to use the water analogy...</p>
+						<p style="text-align:left; margin-left:19%">V - Voltage - Water Pressure</p>
+						<p style="text-align:left; margin-left:20%">I - Current - Volume of Water that Flows</p>
+						<p style="text-align:left; margin-left:19%">R - Resistance - Narrowness of the Pipe</p>
+					</section>
+					
+					<section>
+						<p>LEDs 'use' voltage; the voltage is lower after the LED.</p>
+						<p>This will be listed as Vf (forward voltage) in the LED specification</p>
+						<p>They work this out for running the LED at 20 milliamps (mA), i.e., 0.020 amps (A)</p>
+						<P>It varies a lot by colour and a little even within colour</p>
+					</section>
+					
+					<section>
+						<p>For reference</p>
+						<img height="300" src="resources/OHM/c.jpg"></img>
+						<p><small>src: http://www.iteezone.com/</small><p>
+					</section>
+					
+					<section>
+						<p>If V = I × R Then V / I = R</p>
+						<p>We have a 9V battery, Vf 2.2 and our LED likes 20 mA so...</p>						
+						<p>6.8 V / 0.020 A = 340 Ω</p>
+						<img height="300" src="resources/OHM/d.gif"></img>
+						<p><small>src: https://learn.adafruit.com/assets/3904</small><p>
+					</section>
+					
+					<section>
+						<p>What if we don't use a resistor?</p>
+						<p>V / R = I ?</p>
+						<p>LEDs resistance is complicated, we'll approx 15 Ω</p>
+						<p><small>src: http://lednique.com/current-voltage-relationships/resistance-of-an-led/</small><p>						
+						<p class="fragment">9 V / 15 Ω = 0.6 A</p>
+						<p class="fragment">9 V / 600* mA through a commponent that wanted 2.2v and 20 mA</p>
+						<p class="fragment">Your LED will be really bright then immediately very dead</p>						
+					</section>
+					
+					<section>
+						<p>So why does this work?</p>
+						<p class="fragment">Because batteries can only supply so much current</p>
+						<p class="fragment">Coin cells are tiny, so you get away with this</p>
+						<img height="300" src="resources/lol.jpg"></img>
+						<p><small>http://www.thinkcreate.org/index.php/origami-balloon-mood-light/</small></p>
+					</section>
+										
+					<section>
+						<p>There are calcuators online</p>
+						<p>http://www.ohmslawcalculator.com/led-resistor-calculator</p>
+						
+						<img style="background-color:white;" height="300" src="resources/OHM/b.png"></img>
+						<p><small>src: http://www.ohmslawcalculator.com/led-resistor-calculator</small><p>		
+						
+					</section>
+					
+				</section>
+				
+				
+				<section data-markdown>
+					<script type="text/template">
+						## Markdown support
+
+						Write content using inline or external Markdown.
+						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
+
+						```
+						<section data-markdown>
+						  ## Markdown support
+
+						  Write content using inline or external Markdown.
+						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
+						</section>
+						```
+					</script>
+				</section>
+
+				<section>
+					<section id="fragments">
+						<h2>Fragments</h2>
+						<p>Hit the next arrow...</p>
+						<p class="fragment">... to step through ...</p>
+						<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
+
+						<aside class="notes">
+							This slide has fragments which are also stepped through in the notes window.
+						</aside>
+					</section>
+					<section>
+						<h2>Fragment Styles</h2>
+						<p>There's different types of fragments, like:</p>
+						<p class="fragment grow">grow</p>
+						<p class="fragment shrink">shrink</p>
+						<p class="fragment fade-out">fade-out</p>
+						<p class="fragment fade-up">fade-up (also down, left and right!)</p>
+						<p class="fragment current-visible">current-visible</p>
+						<p>Highlight <span class="fragment highlight-red">red</span> <span class="fragment highlight-blue">blue</span> <span class="fragment highlight-green">green</span></p>
+					</section>
+				</section>
+
+				<section id="transitions">
+					<h2>Transition Styles</h2>
+					<p>
+						You can select from different transitions, like: <br>
+						<a href="?transition=none#/transitions">None</a> -
+						<a href="?transition=fade#/transitions">Fade</a> -
+						<a href="?transition=slide#/transitions">Slide</a> -
+						<a href="?transition=convex#/transitions">Convex</a> -
+						<a href="?transition=concave#/transitions">Concave</a> -
+						<a href="?transition=zoom#/transitions">Zoom</a>
+					</p>
+				</section>
+
+				<section id="themes">
+					<h2>Themes</h2>
+					<p>
+						reveal.js comes with a few themes built in: <br>
+						<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/blood.css'); return false;">Blood</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
+					</p>
+				</section>
+
+				<section>
+					<section data-background="#dddddd">
+						<h2>Slide Backgrounds</h2>
+						<p>
+							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
+						</p>
+						<a href="#" class="navigate-down">
+							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+						</a>
+					</section>
+					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
+						<h2>Image Backgrounds</h2>
+						<pre><code class="hljs">&lt;section data-background="image.png"&gt;</code></pre>
+					</section>
+					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
+						<h2>Tiled Backgrounds</h2>
+						<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
+					</section>
+					<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
+						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
+							<h2>Video Backgrounds</h2>
+							<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
+						</div>
+					</section>
+					<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
+						<h2>... and GIFs!</h2>
+					</section>
+				</section>
+
+				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
+					<h2>Background Transitions</h2>
+					<p>
+						Different background transitions are available via the backgroundTransition option. This one's called "zoom".
+					</p>
+					<pre><code class="hljs">Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
+				</section>
+
+				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
+					<h2>Background Transitions</h2>
+					<p>
+						You can override background transitions per-slide.
+					</p>
+					<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
+				</section>
+
+				<section>
+					<h2>Pretty Code</h2>
+					<pre><code class="hljs" data-trim contenteditable>
+function linkify( selector ) {
+  if( supports3DTransforms ) {
+
+    var nodes = document.querySelectorAll( selector );
+
+    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
+      var node = nodes[i];
+
+      if( !node.className ) {
+        node.className += ' roll';
+      }
+    }
+  }
+}
+					</code></pre>
+					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
+				</section>
+
+				<section>
+					<h2>Marvelous List</h2>
+					<ul>
+						<li>No order here</li>
+						<li>Or here</li>
+						<li>Or here</li>
+						<li>Or here</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Fantastic Ordered List</h2>
+					<ol>
+						<li>One is smaller than...</li>
+						<li>Two is smaller than...</li>
+						<li>Three!</li>
+					</ol>
+				</section>
+
+				<section>
+					<h2>Tabular Tables</h2>
+					<table>
+						<thead>
+							<tr>
+								<th>Item</th>
+								<th>Value</th>
+								<th>Quantity</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Apples</td>
+								<td>$1</td>
+								<td>7</td>
+							</tr>
+							<tr>
+								<td>Lemonade</td>
+								<td>$2</td>
+								<td>18</td>
+							</tr>
+							<tr>
+								<td>Bread</td>
+								<td>$3</td>
+								<td>2</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+
+				<section>
+					<h2>Clever Quotes</h2>
+					<p>
+						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
+						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
+					</p>
+					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
+						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
+						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
+					</blockquote>
+				</section>
+
+				<section>
+					<h2>Intergalactic Interconnections</h2>
+					<p>
+						You can link between slides internally,
+						<a href="#/2/3">like this</a>.
+					</p>
+				</section>
+
+				<section>
+					<h2>Speaker View</h2>
+					<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
+					<p>Press the <em>S</em> key to try it out.</p>
+
+					<aside class="notes">
+						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+					</aside>
+				</section>
+
+				<section>
+					<h2>Export to PDF</h2>
+					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
+					<iframe data-src="https://www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+				</section>
+
+				<section>
+					<h2>Global State</h2>
+					<p>
+						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
+						will be added as a class to the document element when the slide is open. This lets you
+						apply broader style changes, like switching the page background.
+					</p>
+				</section>
+
+				<section data-state="customevent">
+					<h2>State Events</h2>
+					<p>
+						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
+					</p>
+					<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
+Reveal.addEventListener( 'customevent', function() {
+	console.log( '"customevent" has fired' );
+} );
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Take a Moment</h2>
+					<p>
+						Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
+					</p>
+				</section>
+
+				<section>
+					<h2>Much more</h2>
+					<ul>
+						<li>Right-to-left support</li>
+						<li><a href="https://github.com/hakimel/reveal.js#api">Extensive JavaScript API</a></li>
+						<li><a href="https://github.com/hakimel/reveal.js#auto-sliding">Auto-progression</a></li>
+						<li><a href="https://github.com/hakimel/reveal.js#parallax-background">Parallax backgrounds</a></li>
+						<li><a href="https://github.com/hakimel/reveal.js#keyboard-bindings">Custom keyboard bindings</a></li>
+					</ul>
+				</section>
+
+				<section style="text-align: left;">
+					<h1>THE END</h1>
+					<p>
+						- <a href="http://slides.com">Try the online editor</a> <br>
+						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
+					</p>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
