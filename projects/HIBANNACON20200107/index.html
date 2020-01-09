@@ -46,6 +46,9 @@
 					<p>
 						<small>Content stolen and presented by Kataku Cosplay</small>
 					</p>
+					<p>*Link to slides online at the end*</p>
+					
+					
 				</section>
 
 				<section>
@@ -470,7 +473,10 @@
 									
 					<section>
 						<h2>Designing a circuit</h2>						
-						<p class="fragment">OHM's LAW</p>						
+						<p class="fragment">OHM's LAW</p>
+						<p class="fragment">Series and Parallel</p>
+						<p class="fragment">Putting it all together</p>
+						
 					</section>
 				
 				</section>
@@ -481,9 +487,9 @@
 						<h2>OHM's LAW</h2>						
 						<p class="fragment">V = I × R</p>
 						<p class="fragment">V is the voltage, I is the current, and R is the resistance</p>
-						<p class="fragment">This is how you work out what resistor you need</p>	
-						<p class="fragment">When you want to use a larger battery than a button cell</p>
-						<p class="fragment">And have your leds keep working</p>	
+						<p class="fragment">This relationship is the core of understanding circuits</p>	
+						<p class="fragment">If you know 2 of these values you can calculate the third</p>
+						<p class="fragment">And with this we're going to stop your LEDs burning out</p>	
 					</section>
 				
 					<section>
@@ -517,17 +523,17 @@
 					<section>
 						<p>What if we don't use a resistor?</p>
 						<p>V / R = I ?</p>
-						<p>LEDs resistance is complicated, we'll approx 15 Ω</p>
-						<p><small>src: http://lednique.com/current-voltage-relationships/resistance-of-an-led/</small><p>						
-						<p class="fragment">9 V / 15 Ω = 0.6 A</p>
-						<p class="fragment">9 V / 600* mA through a commponent that wanted 2.2v and 20 mA</p>
-						<p class="fragment">Your LED will be really bright then immediately very dead</p>						
+						<p>For easy math lets say we use a 1 Ω resistor</p>				
+						<p class="fragment">6.8 V / 1 Ω = 6.8 A</p>						
+						<p class="fragment">Your LED will be really bright then immediately very dead</p>
+						<p class="fragment">Your battery won't actually supply 6.8 A but your LED will melt long before that matters</p>
+						
 					</section>
 					
 					<section>
 						<p>So why does this work?</p>
 						<p class="fragment">Because batteries can only supply so much current</p>
-						<p class="fragment">Coin cells are tiny, so you get away with this</p>
+						<p class="fragment">The output of the coin cell roughly matches what the LED can handle</p>
 						<img height="300" src="resources/lol.jpg"></img>
 						<p><small>http://www.thinkcreate.org/index.php/origami-balloon-mood-light/</small></p>
 					</section>
@@ -541,278 +547,117 @@
 						
 					</section>
 					
-				</section>
-				
-				
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
-
-						Write content using inline or external Markdown.
-						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-
-						```
-						<section data-markdown>
-						  ## Markdown support
-
-						  Write content using inline or external Markdown.
-						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
-
-				<section>
-					<section id="fragments">
-						<h2>Fragments</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
-
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
-					</section>
 					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's different types of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment fade-up">fade-up (also down, left and right!)</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p>Highlight <span class="fragment highlight-red">red</span> <span class="fragment highlight-blue">blue</span> <span class="fragment highlight-green">green</span></p>
+						<p>Resistors have their resistance on them</p>
+						<p>A multimeter can also test their value</p>
+						<img style="background-color:white;" height="300" src="resources/seriesParallel/b.png"></img>
+						<p><small>src: https://learn.adafruit.com/lets-put-leds-in-things/from-scratch</small><p>		
+						
 					</section>
+					
 				</section>
-
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=slide#/transitions">Slide</a> -
-						<a href="?transition=convex#/transitions">Convex</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a>
-					</p>
-				</section>
-
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						reveal.js comes with a few themes built in: <br>
-						<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/blood.css'); return false;">Blood</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
-					</p>
-				</section>
-
+				
 				<section>
-					<section data-background="#dddddd">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
+									
+					<section>
+						<h2>Series and Parallel</h2>	
 					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code class="hljs">&lt;section data-background="image.png"&gt;</code></pre>
+					
+					<section>
+						<h2>Series</h2>
+						<p>Components on a single path through the circuit</p>
+						<p>Voltages of the components on the path add up but the current stays the same</p>
+						<img style="background-color:white;" height="200" src="resources/seriesParallel/e.png"></img>
+						<p><small>src: https://forum.digikey.com/t/led-wiring-series-vs-parallel-vs-series-parallel/1625</small><p>		
 					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Tiled Backgrounds</h2>
-						<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
+					
+					<section>
+						<h2>Parallel</h2>
+						<p>Multiple identical paths through the circuit</p>
+						<p>Current requirements of the components on the path add up but the voltage stays the same</p>						
+						<img style="background-color:white;" height="200" src="resources/seriesParallel/f.png"></img>
+						<p><small>src: https://forum.digikey.com/t/led-wiring-series-vs-parallel-vs-series-parallel/1625</small><p>		
 					</section>
-					<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-							<h2>Video Backgrounds</h2>
-							<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
-						</div>
+					
+					<section>
+						<p>This applies to batteries as well</p>
+						<p>Parallel cells can supply more current</p>
+						<p>Series cells supply more voltage</p>
+						<img style="background-color:white;" height="100" src="resources/seriesParallel/a.png"></img>
+						<p><small>src: https://learn.adafruit.com/lets-put-leds-in-things/from-scratch</small><p>		
 					</section>
-					<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
-						<h2>... and GIFs!</h2>
+					
+					<section>
+						<p>So assuming the below LEDs draw 20 mA each what's the current below?</p>
+						<p class="fragment">Yeah, its still just 20 mA because they're in series</p>
+						<img style="background-color:white;" height="300" src="resources/seriesParallel/c.png"></img>
+						<p><small>src: https://learn.adafruit.com/lets-put-leds-in-things/from-scratch</small><p>		
 					</section>
+					
 				</section>
-
-				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						Different background transitions are available via the backgroundTransition option. This one's called "zoom".
-					</p>
-					<pre><code class="hljs">Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
-				</section>
-
-				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						You can override background transitions per-slide.
-					</p>
-					<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
+				
+				<section>
+									
+					<section>
+						<h2>Putting it all together</h2>						
+					</section>
+					
+					<section>						
+						<p>Resistor values won't match your math exactly</p>
+						<p>Balancing path resistances keeps everything lit</p>
+						<img style="background-color:white;" height="400" src="resources/seriesParallel/d.png"></img>
+						<p><small>src: https://learn.adafruit.com/lets-put-leds-in-things/from-scratch</small><p>		
+					</section>
+					
+					<section>
+						<h2>That's enough theory for now</h2>
+						<p>Now lets make a thing!</p>
+					</section>
+										
 				</section>
 
 				<section>
-					<h2>Pretty Code</h2>
-					<pre><code class="hljs" data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
-
-    var nodes = document.querySelectorAll( selector );
-
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
-}
-					</code></pre>
-					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
+					<section>
+						<h2>Picking a battery</h2>
+						<p>mAh and life expectancy</p>
+					</section>										
+				</section>
+				
+				<section>
+					<section>
+						<h2>Diffusing light</h2>
+						<p></p>
+					</section>										
+				</section>
+				
+				<section>
+					<section>
+						<h2>Modularity and Connectors</h2>
+						<p></p>
+					</section>										
+				</section>
+				
+				<section>
+					<section>
+						<h2>Removability, washability, velcro and hidden pockets</h2>
+						<p></p>
+					</section>										
 				</section>
 
 				<section>
-					<h2>Marvelous List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
-
-				<section>
-					<h2>Tabular Tables</h2>
-					<table>
-						<thead>
-							<tr>
-								<th>Item</th>
-								<th>Value</th>
-								<th>Quantity</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Apples</td>
-								<td>$1</td>
-								<td>7</td>
-							</tr>
-							<tr>
-								<td>Lemonade</td>
-								<td>$2</td>
-								<td>18</td>
-							</tr>
-							<tr>
-								<td>Bread</td>
-								<td>$3</td>
-								<td>2</td>
-							</tr>
-						</tbody>
-					</table>
-				</section>
-
-				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
-				</section>
-
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Speaker View</h2>
-					<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
-					<p>Press the <em>S</em> key to try it out.</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
-				</section>
-
-				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
-					<iframe data-src="https://www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-				</section>
-
-				<section>
-					<h2>Global State</h2>
-					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the page background.
-					</p>
-				</section>
-
-				<section data-state="customevent">
-					<h2>State Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
-				</section>
-
-				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
-					</p>
-				</section>
-
-				<section>
-					<h2>Much more</h2>
-					<ul>
-						<li>Right-to-left support</li>
-						<li><a href="https://github.com/hakimel/reveal.js#api">Extensive JavaScript API</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#auto-sliding">Auto-progression</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#parallax-background">Parallax backgrounds</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#keyboard-bindings">Custom keyboard bindings</a></li>
-					</ul>
+					<section>
+						<h2>Youtubers to watch</h2>
+						<p><a href="https://www.youtube.com/user/bigclivedotcom">Big Clive</a></p>
+						<p><a href="https://www.youtube.com/user/msadaghd">Electroboom</a></p>						
+						<p><a href="https://www.youtube.com/user/greatscottlab">Great Scott</a></p>
+						<p><a href="https://www.youtube.com/user/eaterbc">Ben Eater</a></p>
+					</section>										
 				</section>
 
 				<section style="text-align: left;">
 					<h1>THE END</h1>
-					<p>
-						- <a href="http://slides.com">Try the online editor</a> <br>
-						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
-					</p>
+					<p>Steal my work here:</p>
+					<p><a href="http://kataku.github.io/projects/HIBANNACON20200107/index.html#/">http://kataku.github.io/projects/HIBANNACON20200107/index.html#/</a></p>
 				</section>
 
 			</div>
